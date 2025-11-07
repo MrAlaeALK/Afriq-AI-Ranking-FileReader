@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+pandas
+country_converter
+rapidfuzz
+python-multipart
