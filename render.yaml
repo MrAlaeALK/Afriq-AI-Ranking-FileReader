@@ -1,0 +1,14 @@
+# Render Blueprint for FastAPI FileReader Service
+
+services:
+  - type: web
+    name: afriqai-filereader
+    runtime: docker
+    region: frankfurt  # Same region as main backend
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /docs
+    envVars:
+      - key: PORT
+        value: 8000
+
