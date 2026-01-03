@@ -1,6 +1,7 @@
 fastapi
 uvicorn
 pandas
-country_converter
+openpyxl
+country-converter
 rapidfuzz
 python-multipart

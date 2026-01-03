@@ -19,12 +19,8 @@ COPY main.py .
 RUN useradd -m -u 1000 fastapi && chown -R fastapi:fastapi /app
 USER fastapi
 
-# Expose port (Render will use $PORT)
+# Expose port
 EXPOSE 8000
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=30s --retries=3 \
-    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:${PORT:-8000}/docs')" || exit 1
 
 # Run the application
 CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}
